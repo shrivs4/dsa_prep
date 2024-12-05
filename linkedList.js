@@ -119,7 +119,22 @@ class LinkedList {
             let nextNode = prevNode.next.next;
             prevNode.next = nextNode;
         }
+        this.length-=1;
         return true
+    }
+
+    reverse(){
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+        let next = temp.next;
+        let prev = null;
+        for(let i=0; i<this.length; i++){
+            next = temp.next; //5,6,7
+            temp.next = prev; //5-next:null,5-next:4-next:null,6-next:5-next:4-next:null...
+            prev = temp; //4-next:null,5-next:4-next:null,6-next:5-next:4-next:null...
+            temp = next; // 5-linked; 6-linked...
+        }
     }
 }
 
@@ -128,12 +143,13 @@ newLL.push(5)
 newLL.push(6)
 newLL.push(7)
 newLL.push(8)
-newLL.pop()
-newLL.unshift(3)
-newLL.shift()
-newLL.set(1,9)
-newLL.insert(1,5);
-console.log(newLL.get(2),'l')
-newLL.remove(2)
-console.log(newLL.get(2),'k')
+// newLL.pop()
+// newLL.unshift(3)
+// newLL.shift()
+// newLL.set(1,9)
+// newLL.insert(1,5);
+// console.log(newLL.get(2),'l')
+// newLL.remove(2)
+// console.log(newLL.get(2),'k')
+newLL.reverse();
 console.log(newLL)
