@@ -138,11 +138,14 @@ class LinkedList {
     }
 }
 
+
 const newLL = new LinkedList(4);
 newLL.push(5)
 newLL.push(6)
 newLL.push(7)
 newLL.push(8)
+
+// newLL.removerepeate()
 // newLL.pop()
 // newLL.unshift(3)
 // newLL.shift()
@@ -151,5 +154,5 @@ newLL.push(8)
 // console.log(newLL.get(2),'l')
 // newLL.remove(2)
 // console.log(newLL.get(2),'k')
-newLL.reverse();
-console.log(newLL)
+// newLL.reverse();
+// console.log(newLL)
